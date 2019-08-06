@@ -14,12 +14,7 @@ function LandingPage() {
       </div>
       <div className="form">
         <form className="landing-page-form">
-          <input
-            type="text"
-            placeholder="Shirley Bassey"
-            name="name-input"
-            id="name-input"
-          />
+          <input type="text" name="name-input" id="name-input" />
           <Button>Search</Button>
         </form>
       </div>
