@@ -1,5 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
+import Button from "../Button/Button";
 
 function LandingPage() {
   return (
@@ -19,6 +20,7 @@ function LandingPage() {
             name="name-input"
             id="name-input"
           />
+          <Button>Search</Button>
         </form>
       </div>
     </div>

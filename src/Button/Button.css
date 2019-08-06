@@ -1,0 +1,8 @@
+#button {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 0 5px 1px rgba(39, 38, 38, 0.5);
+  background: rgb(122, 131, 122);
+  color: white;
+  border: none;
+}
