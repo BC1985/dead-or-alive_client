@@ -1,8 +1,9 @@
 import React from "react";
+import "./LandingPage.css";
 
 function LandingPage() {
   return (
-    <div classNam="container">
+    <div className="landing-page-container">
       <div className="header">
         <h1>Dead or Alive</h1>
         <p>
