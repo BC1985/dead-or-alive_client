@@ -1,3 +1,16 @@
 .landing-page-container {
-  padding: 20px;
+  padding: 40px;
+}
+
+.header {
+  margin-bottom: 50px;
+}
+.landing-page-form {
+  padding: 0;
+}
+.landing-page-form input {
+  background: lightgray;
+  padding: 3px;
+  margin-right: 10px;
+  border-radius: 3px;
 }
