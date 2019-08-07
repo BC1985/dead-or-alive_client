@@ -1,7 +1,7 @@
 import React from "react";
 import LandingPage from "./LandingPage/LandingPage";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-import Results from "./Results/Results";
+import Results from "./Results/Results-dead";
 
 function App() {
   return (
