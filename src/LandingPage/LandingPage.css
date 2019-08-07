@@ -6,3 +6,7 @@
   margin-bottom: 50px;
   font-family: "Cinzel", sans;
 }
+
+input[type="checkbox"] {
+  display: inline;
+}

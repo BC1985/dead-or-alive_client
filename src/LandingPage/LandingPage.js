@@ -21,10 +21,15 @@ class LandingPage extends Component {
             dead.
           </p>
         </div>
-        Check to return dead person
-        <input type="checkbox" name="checkbox" onClick={this.changeState} />
+        <p>
+          Search option currently unavailable for demonstrative purposes. Check
+          to return dead person
+          <span>
+            <input type="checkbox" name="checkbox" onClick={this.changeState} />
+          </span>
+        </p>
         <div className="form">
-          <Form changeState={this.changeState} />
+          <Form alive={this.state.alive} />
         </div>
       </div>
     );
