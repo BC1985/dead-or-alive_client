@@ -9,7 +9,7 @@ function App() {
       <Router>
         <Switch>
           <LandingPage exact path="/" component={LandingPage} />
-          <Results path="/results" component={Results} />
+          <Results path="/results-dead" component={Results} />
         </Switch>
       </Router>
     </div>
