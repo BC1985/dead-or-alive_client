@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import portrait from "../Images/portrait.png";
+import Form from "../Form/Form";
 import "./Results.css";
 class Results extends Component {
   constructor(props) {
@@ -20,8 +20,9 @@ class Results extends Component {
           </div>
           <div className="status">
             <h1>Pushing up the daisies</h1>
-            <p>May 31, 1819 - March 26,1892</p>
+            <p className="bio_dates">May 31, 1819 - March 26,1892</p>
           </div>
+          <Form />
         </div>
       </div>
     );

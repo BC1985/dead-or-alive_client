@@ -1,3 +1,7 @@
+.results-container {
+  padding: 20px;
+}
+
 .image-container {
   display: flex;
   flex-direction: column;
@@ -6,7 +10,7 @@
 
 .portrait {
   width: 250px;
-  margin: 30px;
+  margin: 10px auto;
   border: 10px inset black;
 }
 .name {
@@ -14,8 +18,10 @@
   font-weight: bold;
 }
 .status {
-  padding: 20px;
   color: rgb(0, 0, 0);
   font-family: "Eater", cursive;
   text-align: center;
+}
+.bio_dates {
+  margin-bottom: 20px;
 }
