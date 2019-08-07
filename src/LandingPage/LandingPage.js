@@ -1,6 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
-import Button from "../Button/Button";
+import Form from "../Form/Form";
 
 function LandingPage() {
   return (
@@ -13,10 +13,7 @@ function LandingPage() {
         </p>
       </div>
       <div className="form">
-        <form className="landing-page-form">
-          <input type="text" name="name-input" id="name-input" />
-          <Button>Search</Button>
-        </form>
+        <Form />
       </div>
     </div>
   );
