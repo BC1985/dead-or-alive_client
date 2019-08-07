@@ -26,3 +26,11 @@
 .bio_dates {
   margin-bottom: 40px;
 }
+.status_alive {
+  color: rgb(0, 0, 0);
+  font-family: "Cinzel", serif;
+  text-align: center;
+}
+.bio_dates_alive {
+  margin-bottom: 40px;
+}
