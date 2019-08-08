@@ -4,11 +4,11 @@ import Form from "../Form/Form";
 
 class LandingPage extends Component {
   state = {
-    alive: true
+    checkboxState: false
   };
   changeState = () => {
     this.setState({
-      alive: false
+      checkboxState: !this.state.checkboxState
     });
   };
   render() {
@@ -22,14 +22,20 @@ class LandingPage extends Component {
           </p>
         </div>
         <p>
-          Search option currently unavailable for demonstrative purposes. Check
-          to return dead person
+          Search option currently unavailable for demonstrative purposes. Click
+          submit to return living person or check below and click submit to
+          return dead person
+        </p>
+        <p>
           <span>
             <input type="checkbox" name="checkbox" onClick={this.changeState} />
           </span>
+          {!this.state.checkboxState
+            ? "Return living person"
+            : "Return dead person"}
         </p>
         <div className="form">
-          <Form alive={this.state.alive} />
+          <Form checkboxState={this.state.checkboxState} />
         </div>
       </div>
     );
