@@ -10,7 +10,7 @@ class Form extends Component {
     return (
       <div className="form">
         <input type="text" name="name-input" id="name-input" />
-        {!this.props.alive ? (
+        {this.props.checkboxState ? (
           <Link to="/results-dead">
             <Button>Search</Button>
           </Link>
