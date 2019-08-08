@@ -11,7 +11,9 @@
 .portrait {
   width: 250px;
   margin: 10px auto;
-  border: 10px inset black;
+  border: 10px double rgb(211, 150, 19);
+  border-radius: 50%;
+  box-shadow: 10px 5px 20px gray;
 }
 .name {
   text-align: center;
