@@ -1,14 +1,49 @@
 import React, { Component } from "react";
 import "./LandingPage.css";
-import Form from "../Form/Form";
+import config from "../config";
+import Results from "../Results/Results-dead";
+import { Link } from "react-router-dom";
 
 class LandingPage extends Component {
   state = {
-    checkboxState: false
+    people: [],
+    person: "",
+    result: [],
+    ready: false
   };
-  changeState = () => {
+  handleSubmit = e => {
+    e.preventDefault();
+    this.filterPeople();
+  };
+  componentDidMount() {
+    this.fetchPeople();
+  }
+  fetchPeople = async () => {
+    try {
+      const data = await fetch(`${config.API_ENDPOINT}/people/`);
+      const people = await data.json();
+      this.setState({
+        people
+      });
+      console.log(this.state.people);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  filterPeople = () => {
+    const filteredPerson = this.state.people.filter(person => {
+      return person.person_name === this.state.person;
+    });
+    const person = filteredPerson[0].person_name;
+    this.state.result.push(person);
+    console.log(this.state.result);
     this.setState({
-      checkboxState: !this.state.checkboxState
+      ready: true
+    });
+  };
+  changeHandler = e => {
+    this.setState({
+      person: e.target.value
     });
   };
   render() {
@@ -21,22 +56,25 @@ class LandingPage extends Component {
             dead.
           </p>
         </div>
-        <p>
-          Search option currently unavailable for demonstrative purposes. Click
-          submit to return living person or check below and click submit to
-          return dead person
-        </p>
-        <p>
-          <span>
-            <input type="checkbox" name="checkbox" onClick={this.changeState} />
-          </span>
-          {!this.state.checkboxState
-            ? "Return living person"
-            : "Return dead person"}
-        </p>
-        <div className="form">
-          <Form checkboxState={this.state.checkboxState} />
-        </div>
+        <form className="form">
+          <input
+            type="text"
+            name="person_name"
+            id="name"
+            value={this.state.person}
+            onChange={this.changeHandler}
+          />
+          <Link to="/">
+            <button type="submit" onClick={this.handleSubmit}>
+              Search
+            </button>
+          </Link>
+        </form>
+        {this.state.ready && <h1>{this.state.result}</h1>}
+        {/* <Results
+        people={this.state.filteredResult}
+        match={this.props.match}
+        /> */}
       </div>
     );
   }
