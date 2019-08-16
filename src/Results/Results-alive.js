@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Form from "../Form/Form";
 import "./Results.css";
 class Results extends Component {
   render() {
@@ -20,7 +19,6 @@ class Results extends Component {
             <h1>Alive and kickin'</h1>
             <p className="bio_dates_alive">Born March 25, 1947</p>
           </div>
-          <Form />
         </div>
       </div>
     );
