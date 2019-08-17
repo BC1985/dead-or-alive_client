@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 import "./LandingPage.css";
-// import Results from "../Results/Results-dead";
+// import Results from "../Results/Results";
 import config from "../config";
-
-import { Redirect } from "react-router-dom";
 
 class LandingPage extends Component {
   state = {
     people: [],
     person: "",
-    result: [],
-    ready: false
+    result: []
   };
   handleSubmit = e => {
     e.preventDefault();
@@ -38,9 +35,8 @@ class LandingPage extends Component {
     const person = filteredPerson[0].person_name;
     this.state.result.push(person);
     console.log(this.state.result);
-    this.setState({
-      ready: true
-    });
+
+    this.props.history.push("/results");
   };
   changeHandler = e => {
     this.setState({
@@ -69,7 +65,6 @@ class LandingPage extends Component {
             Search
           </button>
         </form>
-        {this.state.ready && <Redirect to="/results" />}
       </div>
     );
   }
