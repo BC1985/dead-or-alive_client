@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./LandingPage.css";
+// import Results from "../Results/Results-dead";
 import config from "../config";
-import Results from "../Results/Results-dead";
-import { Link } from "react-router-dom";
+
+import { Redirect } from "react-router-dom";
 
 class LandingPage extends Component {
   state = {
@@ -64,17 +65,11 @@ class LandingPage extends Component {
             value={this.state.person}
             onChange={this.changeHandler}
           />
-          <Link to="/">
-            <button type="submit" onClick={this.handleSubmit}>
-              Search
-            </button>
-          </Link>
+          <button type="submit" onClick={this.handleSubmit}>
+            Search
+          </button>
         </form>
-        {this.state.ready && <h1>{this.state.result}</h1>}
-        {/* <Results
-        people={this.state.filteredResult}
-        match={this.props.match}
-        /> */}
+        {this.state.ready && <Redirect to="/results" />}
       </div>
     );
   }
