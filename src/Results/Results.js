@@ -16,8 +16,8 @@ const Results = props => {
         </div>
         <div className="name">{props.filteredResult} is...</div>
         <div className="status_alive">
-          <h1>Worm fodder</h1>
-          <p className="bio_dates_alive">1940-1980</p>
+          <h1>{props.description}</h1>
+          <p className="bio_dates_alive">{props.dates}</p>
         </div>
       </div>
     </div>
