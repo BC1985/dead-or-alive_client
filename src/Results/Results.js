@@ -1,5 +1,4 @@
 import React from "react";
-import PersonInfo from "../PersonInfo/PersonInfo";
 
 import "./Results.css";
 const Results = props => {
@@ -15,8 +14,11 @@ const Results = props => {
             alt="portrait"
           />
         </div>
-
-        <PersonInfo result={props.result} />
+        <div className="name">{props.filteredResult} is...</div>
+        <div className="status_alive">
+          <h1>Worm fodder</h1>
+          <p className="bio_dates_alive">1940-1980</p>
+        </div>
       </div>
     </div>
   );
