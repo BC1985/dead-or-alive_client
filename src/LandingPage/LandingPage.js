@@ -7,6 +7,7 @@ class LandingPage extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.filterPeople();
+    this.props.history.push("/results");
   };
 
   render() {
