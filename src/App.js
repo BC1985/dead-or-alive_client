@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import LandingPage from "./LandingPage/LandingPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ResultsDead from "./Results/Results-dead";
-import ResultsAlive from "./Results/Results-alive";
+import Results from "./Results/Results";
 
 class App extends Component {
   render() {
@@ -11,8 +10,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={LandingPage} />
-            <ResultsDead path="/results-dead" component={ResultsDead} />
-            <ResultsAlive path="/results-alive" component={ResultsAlive} />
+            <Results path="/results" />
           </Switch>
         </Router>
       </div>
