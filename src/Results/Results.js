@@ -9,14 +9,14 @@ const Results = props => {
         <div className="image-container">
           <img
             src={
-              "https://i2-prod.mirror.co.uk/incoming/article12776629.ece/ALTERNATES/s615/rexfeatures_47459a.jpg"
+              "https://nationalpostcom.files.wordpress.com/2016/03/john_lennon.jpg?quality=80&strip=all&w=780"
             }
             className="portrait"
             alt="portrait"
           />
         </div>
 
-        <PersonInfo person={props.person} />
+        <PersonInfo result={props.result} />
       </div>
     </div>
   );
