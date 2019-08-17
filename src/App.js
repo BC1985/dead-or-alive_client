@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import LandingPage from "./LandingPage/LandingPage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Results from "./Results/Results";
 import config from "./config";
 
 class App extends Component {
-  state = {
-    people: [],
-    person: "",
-    result: []
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      people: [],
+      person: "",
+      filteredResult: []
+    };
+  }
   handleSubmit = e => {
     e.preventDefault();
     this.filterPeople();
@@ -24,7 +28,6 @@ class App extends Component {
       this.setState({
         people
       });
-      console.log(this.state.people);
     } catch (e) {
       console.log(e);
     }
@@ -34,10 +37,8 @@ class App extends Component {
       return person.person_name === this.state.person;
     });
     const person = filteredPerson[0].person_name;
-    this.state.result.push(person);
-    console.log(this.state.result);
-
-    this.props.history.push("/results");
+    this.state.filteredResult.push(person);
+    console.log(this.state.filteredResult);
   };
   changeHandler = e => {
     this.setState({
@@ -56,7 +57,10 @@ class App extends Component {
               person={this.state.person}
               filterPeople={this.filterPeople}
             />
-            <Results path="/results" />
+            <Results
+              path="/results"
+              filteredResult={this.state.filteredResult}
+            />
           </Switch>
         </Router>
       </div>
