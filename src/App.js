@@ -11,7 +11,9 @@ class App extends Component {
     this.state = {
       people: [],
       person: "",
-      filteredResult: []
+      filteredResult: "",
+      dates: "",
+      description: ""
     };
   }
   handleSubmit = e => {
@@ -37,8 +39,16 @@ class App extends Component {
       return person.person_name === this.state.person;
     });
     const person = filteredPerson[0].person_name;
-    this.state.filteredResult.push(person);
+    this.setState({
+      filteredResult: person
+    });
     console.log(this.state.filteredResult);
+    const personBio = filteredPerson[0].dates;
+    this.setState({ dates: personBio });
+    const description = filteredPerson[0].description;
+    this.setState({
+      description
+    });
   };
   changeHandler = e => {
     this.setState({
@@ -60,6 +70,8 @@ class App extends Component {
             <Results
               path="/results"
               filteredResult={this.state.filteredResult}
+              dates={this.state.dates}
+              description={this.state.description}
             />
           </Switch>
         </Router>
