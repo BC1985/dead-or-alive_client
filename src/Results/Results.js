@@ -13,9 +13,13 @@ const Results = props => {
           />
         </div>
         <div className="name">{props.filteredResult} is...</div>
-        <div className="status_alive">
+        <div
+          className={props.status === "alive" ? "status_alive" : "status_dead"}
+        >
           <h1>{props.description}</h1>
-          <p className="bio_dates_alive">{props.dates}</p>
+        </div>
+        <div className="dates">
+          <p>{props.dates}</p>
         </div>
       </div>
     </div>
