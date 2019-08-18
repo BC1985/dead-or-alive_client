@@ -7,11 +7,9 @@ const Results = props => {
       <div className="results-container">
         <div className="image-container">
           <img
-            src={
-              "https://nationalpostcom.files.wordpress.com/2016/03/john_lennon.jpg?quality=80&strip=all&w=780"
-            }
+            src={`${props.image}`}
             className="portrait"
-            alt="portrait"
+            alt={`${props.filteredResult}`}
           />
         </div>
         <div className="name">{props.filteredResult} is...</div>
