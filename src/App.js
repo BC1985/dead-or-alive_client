@@ -12,6 +12,7 @@ class App extends Component {
       people: [],
       person: "",
       filteredResult: "",
+      status: "",
       dates: "",
       description: "",
       image: ""
@@ -39,19 +40,24 @@ class App extends Component {
     const filteredPerson = this.state.people.filter(person => {
       return person.person_name === this.state.person;
     });
-    const person = filteredPerson[0].person_name;
-    this.setState({
-      filteredResult: person
-    });
-    const personBio = filteredPerson[0].dates;
-    this.setState({ dates: personBio });
-    const description = filteredPerson[0].description;
-    this.setState({
-      description
-    });
-    const image = filteredPerson[0].image;
-    this.setState({
+    const {
+      person_name,
+      dates,
+      description,
+      status,
       image
+    } = filteredPerson[0];
+    const person = person_name;
+    const personBio = dates;
+    const desc = description;
+    const img = image;
+    const doa = status;
+    this.setState({
+      filteredResult: person,
+      dates: personBio,
+      description: desc,
+      image: img,
+      status: doa
     });
   };
   changeHandler = e => {
@@ -60,6 +66,14 @@ class App extends Component {
     });
   };
   render() {
+    const {
+      person,
+      filteredResult,
+      dates,
+      description,
+      image,
+      status
+    } = this.state;
     return (
       <div className="App">
         <Router>
@@ -68,15 +82,16 @@ class App extends Component {
               exact
               path="/"
               changeHandler={this.changeHandler}
-              person={this.state.person}
+              person={person}
               filterPeople={this.filterPeople}
             />
             <Results
               path="/results"
-              filteredResult={this.state.filteredResult}
-              dates={this.state.dates}
-              description={this.state.description}
-              image={this.state.image}
+              filteredResult={filteredResult}
+              dates={dates}
+              description={description}
+              image={image}
+              status={status}
             />
           </Switch>
         </Router>
