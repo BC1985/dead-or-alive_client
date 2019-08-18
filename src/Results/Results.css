@@ -34,7 +34,15 @@
   color: rgb(0, 0, 0);
   font-family: "Cinzel", serif;
   text-align: center;
+  margin-bottom: 40px;
 }
 .bio_dates_alive {
   margin-bottom: 40px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  cursor: pointer;
 }
