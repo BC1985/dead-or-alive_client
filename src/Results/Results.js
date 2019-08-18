@@ -16,7 +16,15 @@ const Results = props => {
         <div
           className={props.status === "alive" ? "status_alive" : "status_dead"}
         >
+          <div />
           <h1>{props.description}</h1>
+        </div>
+        <div className="headstone">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjGlKmax4UKVFJc5JYFBOWC5Q6vgrbq8WSwcOnX-b2vwOQDT7l"
+            alt="headstone"
+            style={{ width: "20%", marginLeft: "auto", marginRight: "auto" }}
+          />
         </div>
         <div className="dates">
           <p>
