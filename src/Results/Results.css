@@ -20,15 +20,14 @@
   font-family: "Cinzel", serif;
   font-weight: bold;
 }
-.status {
+.status_dead {
   color: rgb(0, 0, 0);
   font-family: "Eater", cursive;
   text-align: center;
 }
-.bio_dates {
-  margin-bottom: 40px;
-}
-.status_alive {
+
+.status_alive,
+.dates {
   color: rgb(0, 0, 0);
   font-family: "Cinzel", serif;
   text-align: center;
