@@ -13,7 +13,8 @@ class App extends Component {
       person: "",
       filteredResult: "",
       dates: "",
-      description: ""
+      description: "",
+      image: ""
     };
   }
   handleSubmit = e => {
@@ -42,12 +43,15 @@ class App extends Component {
     this.setState({
       filteredResult: person
     });
-    console.log(this.state.filteredResult);
     const personBio = filteredPerson[0].dates;
     this.setState({ dates: personBio });
     const description = filteredPerson[0].description;
     this.setState({
       description
+    });
+    const image = filteredPerson[0].image;
+    this.setState({
+      image
     });
   };
   changeHandler = e => {
@@ -72,6 +76,7 @@ class App extends Component {
               filteredResult={this.state.filteredResult}
               dates={this.state.dates}
               description={this.state.description}
+              image={this.state.image}
             />
           </Switch>
         </Router>
