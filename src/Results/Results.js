@@ -19,7 +19,11 @@ const Results = props => {
           <h1>{props.description}</h1>
         </div>
         <div className="dates">
-          <p>{props.dates}</p>
+          <p>
+            {props.status === "alive"
+              ? `Born ${props.dates}`
+              : `${props.dates}`}
+          </p>
         </div>
       </div>
     </div>
