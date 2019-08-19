@@ -3,6 +3,7 @@ import LandingPage from "./LandingPage/LandingPage";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Results from "./Results/Results";
 import config from "./config";
+import NotFound from "./NotFound/NotFound";
 
 class App extends Component {
   constructor(props) {
@@ -11,11 +12,7 @@ class App extends Component {
     this.state = {
       people: [],
       person: "",
-      filteredResult: "",
-      status: "",
-      dates: "",
-      description: "",
-      image: "",
+      filteredResult: {},
       notFound: []
     };
   }
@@ -38,34 +35,17 @@ class App extends Component {
     }
   };
   filterPeople = () => {
-    const filteredPerson = this.state.people.filter(person => {
+    const filteredResult = this.state.people.filter(person => {
       return person.person_name === this.state.person;
     });
-    const nonExistant = filteredPerson.length === 0;
-    const enteredName = this.state.person;
-    if (nonExistant) {
-      this.state.notFound.push(enteredName);
+    if (filteredResult.length === 0) {
+      this.setState({
+        notFound: [...this.state.notFound, this.state.person]
+      });
+      return false;
     }
-
-    const {
-      person_name,
-      dates,
-      description,
-      status,
-      image
-    } = filteredPerson[0];
-    const person = person_name;
-    const personBio = dates;
-    const desc = description;
-    const img = image;
-    const doa = status;
-    this.setState({
-      filteredResult: person,
-      dates: personBio,
-      description: desc,
-      image: img,
-      status: doa
-    });
+    this.setState({ filteredResult: filteredResult[0] });
+    return true;
   };
   changeHandler = e => {
     this.setState({
@@ -73,14 +53,7 @@ class App extends Component {
     });
   };
   render() {
-    const {
-      person,
-      filteredResult,
-      dates,
-      description,
-      image,
-      status
-    } = this.state;
+    const { person, filteredResult } = this.state;
     return (
       <div className="App">
         <Router>
@@ -89,17 +62,12 @@ class App extends Component {
               exact
               path="/"
               changeHandler={this.changeHandler}
+              filteredResult={filteredResult}
               person={person}
               filterPeople={this.filterPeople}
             />
-            <Results
-              path="/results"
-              filteredResult={filteredResult}
-              dates={dates}
-              description={description}
-              image={image}
-              status={status}
-            />
+            <Results path="/results" filteredResult={filteredResult} />
+            <NotFound path="/not-found" />
           </Switch>
         </Router>
       </div>
