@@ -6,6 +6,11 @@ import { withRouter } from "react-router-dom";
 class LandingPage extends Component {
   handleSubmit = e => {
     e.preventDefault();
+    // const nonExistant = !this.props.filteredResult;
+    // const enteredName = this.props.person;
+    // if (nonExistant) {
+    //   this.state.notFound.push(enteredName);
+    // }
     this.props.filterPeople();
     this.props.history.push("/results");
   };
