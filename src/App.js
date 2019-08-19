@@ -15,7 +15,8 @@ class App extends Component {
       status: "",
       dates: "",
       description: "",
-      image: ""
+      image: "",
+      notFound: []
     };
   }
   handleSubmit = e => {
@@ -40,6 +41,12 @@ class App extends Component {
     const filteredPerson = this.state.people.filter(person => {
       return person.person_name === this.state.person;
     });
+    const nonExistant = filteredPerson.length === 0;
+    const enteredName = this.state.person;
+    if (nonExistant) {
+      this.state.notFound.push(enteredName);
+    }
+
     const {
       person_name,
       dates,
