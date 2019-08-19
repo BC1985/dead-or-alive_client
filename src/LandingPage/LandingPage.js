@@ -1,18 +1,16 @@
 import React, { Component } from "react";
 import "./LandingPage.css";
-// import Results from "../Results/Results";
 import { withRouter } from "react-router-dom";
 
 class LandingPage extends Component {
   handleSubmit = e => {
     e.preventDefault();
-    // const nonExistant = !this.props.filteredResult;
-    // const enteredName = this.props.person;
-    // if (nonExistant) {
-    //   this.state.notFound.push(enteredName);
-    // }
-    this.props.filterPeople();
-    this.props.history.push(`/results/${this.props.person}`);
+    const ifExists = this.props.filterPeople();
+    if (ifExists) {
+      this.props.history.push(`/results/${this.props.person}`);
+    } else {
+      this.props.history.push("/not-found");
+    }
   };
 
   render() {
