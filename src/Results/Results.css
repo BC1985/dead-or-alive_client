@@ -13,7 +13,7 @@
 }
 .portrait {
   width: 250px;
-  margin: 10px auto;
+  margin: 20px auto;
   border: 10px double rgb(211, 150, 19);
   border-radius: 50%;
   box-shadow: 10px 5px 20px gray;
@@ -24,15 +24,20 @@
   font-weight: bold;
 }
 .status_dead {
-  color: rgb(0, 0, 0);
-  font-family: "Eater", cursive;
+  color: rgb(73, 68, 68);
+  font-family: "Cinzel", serif;
+
   text-align: center;
 }
-
-.status_alive,
 .dates {
-  color: rgb(0, 0, 0);
-  font-family: "Cinzel", serif;
+  color: rgb(73, 68, 68);
+  font-family: "Francois One", sans-serif;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.status_alive {
+  color: rgb(73, 68, 68);
+  font-family: "Francois One", sans-serif;
   text-align: center;
   margin-bottom: 40px;
 }
