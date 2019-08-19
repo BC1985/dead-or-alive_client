@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import headstone from "./headstone.png";
 import "./Results.css";
 const Results = props => {
   const {
@@ -23,7 +24,7 @@ const Results = props => {
         {status !== "alive" && (
           <div className="headstone">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjGlKmax4UKVFJc5JYFBOWC5Q6vgrbq8WSwcOnX-b2vwOQDT7l"
+              src={headstone}
               alt="headstone"
               style={{ width: "20%", marginLeft: "auto", marginRight: "auto" }}
             />
