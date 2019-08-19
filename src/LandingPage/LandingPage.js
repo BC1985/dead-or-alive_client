@@ -12,7 +12,7 @@ class LandingPage extends Component {
     //   this.state.notFound.push(enteredName);
     // }
     this.props.filterPeople();
-    this.props.history.push("/results");
+    this.props.history.push(`/results/${this.props.person}`);
   };
 
   render() {
