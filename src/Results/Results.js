@@ -2,24 +2,25 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Results.css";
 const Results = props => {
+  const {
+    image,
+    status,
+    person_name,
+    description,
+    dates
+  } = props.filteredResult;
   return (
     <div>
       <div className="results-container">
         <div className="image-container">
-          <img
-            src={`${props.image}`}
-            className="portrait"
-            alt={`${props.filteredResult}`}
-          />
+          <img src={`${image}`} className="portrait" alt={`${person_name}`} />
         </div>
-        <div className="name">{props.filteredResult} is...</div>
-        <div
-          className={props.status === "alive" ? "status_alive" : "status_dead"}
-        >
+        <div className="name">{person_name} is...</div>
+        <div className={status === "alive" ? "status_alive" : "status_dead"}>
           <div />
-          <h1>{props.description}</h1>
+          <h1>{description}</h1>
         </div>
-        {props.status !== "alive" && (
+        {status !== "alive" && (
           <div className="headstone">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjGlKmax4UKVFJc5JYFBOWC5Q6vgrbq8WSwcOnX-b2vwOQDT7l"
@@ -29,11 +30,7 @@ const Results = props => {
           </div>
         )}
         <div className="dates">
-          <p>
-            {props.status === "alive"
-              ? `Born ${props.dates}`
-              : `${props.dates}`}
-          </p>
+          <p>{status === "alive" ? `Born ${dates}` : `${dates}`}</p>
         </div>
         <div className="button">
           <NavLink to="/">
