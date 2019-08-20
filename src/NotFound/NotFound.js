@@ -11,11 +11,12 @@ class NotFound extends Component {
         <div className="error-graphic">
           <img src={error} alt="404 error" id="error-graphic" />
         </div>
-        <p style={{ marginBottom: "50px", textAlign: "left" }}>
+        <p style={{ textAlign: "left" }}>
           The person you requested is unavailable. The name has been submitted,
           and their information will be uploaded soon. In the meantime, here is
-          an interesting music fact... {generateRandomFact()}
+          an interesting music fact...
         </p>
+        <div className="fact-card">{generateRandomFact()}</div>
         <NavLink to="/">
           <button>Back</button>
         </NavLink>
