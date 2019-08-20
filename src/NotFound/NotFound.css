@@ -1,0 +1,11 @@
+.not-found-container {
+  padding: 60px;
+  text-align: center;
+  font-family: "Francois One", sans-serif;
+  color: gray;
+}
+
+#error-graphic {
+  width: 40%;
+  padding: 30px;
+}
