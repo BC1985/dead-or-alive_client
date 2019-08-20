@@ -9,3 +9,12 @@
   width: 40%;
   padding: 30px;
 }
+
+.fact-card {
+  background-color: orangered;
+  padding: 20px;
+  color: white;
+  margin: 30px auto;
+  border-radius: 10px;
+  text-align: left;
+}
