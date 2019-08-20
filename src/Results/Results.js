@@ -30,7 +30,7 @@ const Results = props => {
             />
           </div>
         )}
-        <div className="dates">
+        <div className={status === "alive" ? "dates-alive" : "dates-dead"}>
           <p>{status === "alive" ? `Born ${dates}` : `${dates}`}</p>
         </div>
         <div className="button">
