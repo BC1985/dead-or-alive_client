@@ -16,13 +16,24 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="landing-page-container">
-        <div className="header">
-          <h1>Dead or Alive</h1>
-          <p>
-            Enter name of famous person below to see if they are still alive or
-            dead.
-          </p>
+        <div className="header font-effect-decaying">
+          <h1>DEAD OR ALIVE</h1>
+          <h2>your corporality compendium of perishable musicians</h2>
         </div>
+        <p className="quote">
+          "I can resist anything but temptation."
+          <br /> -- Oscar Wilde
+        </p>
+        <p className="description">
+          Sex, drugs and Rock'n'roll. Either one of these or a combination of
+          the three all too often marks the untimely demise of a great musician.
+          Some of the greats are long gone, and some are recently departed. With
+          the high mortality rate that comes with the territory, it can be hard
+          to keep track. Dead or Alive is here to tell you which of the actors
+          in this theatrical tragedy that is the music business is still with us
+          and which are jamming it up in the great gig in the sky. Simply enter
+          the name of a musician below to see if they are alive or dead.
+        </p>
         <form className="form">
           <input
             type="text"
