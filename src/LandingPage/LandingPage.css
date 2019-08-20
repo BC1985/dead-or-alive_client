@@ -8,22 +8,17 @@
   text-align: center;
   font-style: black;
 }
+.subheader {
+  text-align: left;
+}
 
 .description {
   font-family: "Lato", sans-serif;
-  padding: 30px;
   line-height: 1.5em;
   color: rgb(107, 106, 106);
   margin-bottom: 50px;
 }
 
-.quote {
-  color: gray;
-  font-weight: normal;
-  font-size: 15px;
-  font-style: oblique;
-  font-family: "Cinzel", sans;
-}
 .form {
   padding: 0;
   text-align: left;
