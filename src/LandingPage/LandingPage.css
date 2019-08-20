@@ -5,6 +5,24 @@
 .header {
   margin-bottom: 50px;
   font-family: "Cinzel", sans;
+  text-align: center;
+  font-style: black;
+}
+
+.description {
+  font-family: "Lato", sans-serif;
+  padding: 30px;
+  line-height: 1.5em;
+  color: rgb(107, 106, 106);
+  margin-bottom: 50px;
+}
+
+.quote {
+  color: gray;
+  font-weight: normal;
+  font-size: 15px;
+  font-style: oblique;
+  font-family: "Cinzel", sans;
 }
 .form {
   padding: 0;
@@ -16,6 +34,7 @@
   margin-right: 10px;
   border-radius: 3px;
 }
+
 button {
   padding: 5px 10px;
   border-radius: 5px;
