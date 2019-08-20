@@ -49,11 +49,13 @@ class App extends Component {
     );
 
     const data = await postNewPerson.json();
-    console.log("message:", data);
+    return data;
   };
   filterPeople = () => {
     const filteredResult = this.state.people.filter(person => {
-      return person.person_name === this.state.person;
+      return (
+        person.person_name.toLowerCase() === this.state.person.toLowerCase()
+      );
     });
     if (filteredResult.length === 0) {
       this.setState({
@@ -71,7 +73,6 @@ class App extends Component {
     });
   };
   render() {
-    console.log(this.state.person_name);
     const { person, filteredResult } = this.state;
     return (
       <div className="App">
