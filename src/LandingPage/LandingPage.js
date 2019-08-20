@@ -28,7 +28,7 @@ class LandingPage extends Component {
             type="text"
             name="person_name"
             id="name"
-            value={this.props.person}
+            value={this.props.enteredPerson}
             onChange={this.props.changeHandler}
           />
           <button type="submit" onClick={this.handleSubmit}>
