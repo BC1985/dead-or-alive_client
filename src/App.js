@@ -34,6 +34,29 @@ class App extends Component {
       console.log(e);
     }
   };
+  uploadNewPerson = async person => {
+    // const newPerson = this.state.notFound[0];
+    const config = {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(person)
+    };
+
+    const postNewPerson = await fetch(
+      "http://localhost:8000/api/not_in_db",
+      config
+    );
+
+    const data = await postNewPerson.json();
+
+    console.log("new person:", person);
+    console.log("====================================");
+
+    console.log("message:", data.message);
+    console.log("====================================");
+  };
   filterPeople = () => {
     const filteredResult = this.state.people.filter(person => {
       return person.person_name === this.state.person;
@@ -42,6 +65,7 @@ class App extends Component {
       this.setState({
         notFound: [...this.state.notFound, this.state.person]
       });
+      this.uploadNewPerson();
       return false;
     }
     this.setState({ filteredResult: filteredResult[0] });
