@@ -29,9 +29,15 @@
 
   text-align: center;
 }
-.dates {
+.dates-alive {
   color: rgb(73, 68, 68);
   font-family: "Francois One", sans-serif;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.dates-dead {
+  color: rgb(73, 68, 68);
+  font-family: "Cinzel", serif;
   text-align: center;
   margin-bottom: 40px;
 }
