@@ -65,7 +65,7 @@ class App extends Component {
       this.uploadNewPerson();
       return false;
     }
-    this.setState({ filteredResult: filteredResult[0] });
+    this.setState({ filteredResult: filteredResult[0], enteredPerson: "" });
     return true;
   };
   changeHandler = e => {
