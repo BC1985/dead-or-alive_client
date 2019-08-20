@@ -7,7 +7,7 @@ class LandingPage extends Component {
     e.preventDefault();
     const ifExists = this.props.filterPeople();
     if (ifExists) {
-      this.props.history.push(`/results/${this.props.person}`);
+      this.props.history.push(`/results/${this.props.enteredPerson}`);
     } else {
       this.props.history.push("/not-found");
     }
@@ -18,12 +18,10 @@ class LandingPage extends Component {
       <div className="landing-page-container">
         <div className="header font-effect-decaying">
           <h1>DEAD OR ALIVE</h1>
-          <h2>your corporality compendium of perishable musicians</h2>
+          <div className="subheader">
+            <p>your corporality compendium of perishable musicians</p>
+          </div>
         </div>
-        <p className="quote">
-          "I can resist anything but temptation."
-          <br /> -- Oscar Wilde
-        </p>
         <p className="description">
           Sex, drugs and Rock'n'roll. Either one of these or a combination of
           the three all too often marks the untimely demise of a great musician.
