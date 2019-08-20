@@ -11,7 +11,7 @@ class App extends Component {
 
     this.state = {
       people: [],
-      person: "",
+      enteredPerson: "",
       filteredResult: {}
     };
   }
@@ -34,7 +34,7 @@ class App extends Component {
     }
   };
   uploadNewPerson = async () => {
-    const person_name = this.state.person;
+    const person_name = this.state.enteredPerson;
     const config = {
       method: "POST",
       headers: {
@@ -54,12 +54,13 @@ class App extends Component {
   filterPeople = () => {
     const filteredResult = this.state.people.filter(person => {
       return (
-        person.person_name.toLowerCase() === this.state.person.toLowerCase()
+        person.person_name.toLowerCase() ===
+        this.state.enteredPerson.toLowerCase()
       );
     });
     if (filteredResult.length === 0) {
       this.setState({
-        person_name: this.state.person_name
+        person_name: this.state.enteredPerson
       });
       this.uploadNewPerson();
       return false;
@@ -69,11 +70,11 @@ class App extends Component {
   };
   changeHandler = e => {
     this.setState({
-      person: e.target.value
+      enteredPerson: e.target.value
     });
   };
   render() {
-    const { person, filteredResult } = this.state;
+    const { enteredPerson, filteredResult } = this.state;
     return (
       <div className="App">
         <Router>
@@ -83,7 +84,7 @@ class App extends Component {
               path="/"
               changeHandler={this.changeHandler}
               filteredResult={filteredResult}
-              person={person}
+              enteredPerson={enteredPerson}
               filterPeople={this.filterPeople}
             />
             <Results path="/results" filteredResult={filteredResult} />
