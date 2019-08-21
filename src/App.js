@@ -24,7 +24,7 @@ class App extends Component {
   }
   fetchPeople = async () => {
     try {
-      const data = await fetch(`${config.API_ENDPOINT}/people/`);
+      const data = await fetch(`${config.BASE_URL}/people/`);
       const people = await data.json();
       this.setState({
         people
@@ -42,9 +42,8 @@ class App extends Component {
       },
       body: JSON.stringify({ person_name })
     };
-
     const postNewPerson = await fetch(
-      "http://localhost:8000/api/not_in_db",
+      "https://thawing-springs-96491.herokuapp.com/api/not_in_db",
       config
     );
 
