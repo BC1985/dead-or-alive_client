@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./LandingPage.css";
 import { withRouter } from "react-router-dom";
+import ramones from "./ramones.png";
 
 class LandingPage extends Component {
   handleSubmit = e => {
@@ -16,11 +17,14 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="landing-page-container">
-        <div className="header font-effect-decaying">
+        <div>
+          <img src={ramones} alt="ramones-dead" id="dead-ramones" />
+        </div>
+        <div className="header font-effect-destruction">
           <h1>DEAD OR ALIVE</h1>
-          <div className="subheader">
-            <p>your corporality compendium of perishable musicians</p>
-          </div>
+        </div>
+        <div className="subheader">
+          <p>your corporality compendium of perishable musicians</p>
         </div>
         <p className="description">
           Sex, drugs and Rock'n'roll. Either one of these or a combination of
