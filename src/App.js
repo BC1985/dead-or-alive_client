@@ -39,6 +39,9 @@ class App extends Component {
     }
   };
   uploadNewPerson = async () => {
+    this.setState({
+      loading: true
+    });
     const person_name = this.state.enteredPerson;
     const config = {
       method: "POST",
@@ -68,7 +71,8 @@ class App extends Component {
       let title = data[1][index];
       this.setState({
         description: desc,
-        unknownPerson: title
+        unknownPerson: title,
+        loading: false
       });
     });
     return data;
