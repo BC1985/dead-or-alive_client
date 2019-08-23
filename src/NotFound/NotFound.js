@@ -16,7 +16,7 @@ class NotFound extends Component {
           {unknownPerson} is unavailable. The name has been submitted, and their
           information will be uploaded soon. Here is what I can tell you in the
           meantime: {description} <br />
-          Here is an interesting music fact...
+          And now, here is an interesting music fact...
         </p>
         <div className="fact-card">{generateRandomFact()}</div>
         <NavLink to="/">
