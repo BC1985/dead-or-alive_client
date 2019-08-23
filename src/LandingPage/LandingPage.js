@@ -16,9 +16,9 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <>
+      <div className="page-container">
         <div className="banner">
-          <div className="header font-effect-destruction">
+          <div className="header ">
             <h1>DEAD OR ALIVE</h1>
           </div>
           <div className="subheader">
@@ -54,7 +54,7 @@ class LandingPage extends Component {
             </button>
           </form>
         </div>
-      </>
+      </div>
     );
   }
 }
