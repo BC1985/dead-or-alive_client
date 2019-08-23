@@ -2,10 +2,41 @@
   padding: 12%;
 }
 #dead-ramones {
-  border: black 10px solid;
+  border: rgb(65, 62, 62) 10px solid;
   width: 100%;
+  border-radius: 5px;
+}
+.banner {
+  font-family: "Cinzel", sans;
+  text-align: center;
+  color: rgb(107, 106, 106);
+}
+.subheader {
+  text-align: left;
+  font-weight: bolder;
 }
 
+.description {
+  font-family: "Lato", sans-serif;
+  line-height: 1.5em;
+  color: rgb(107, 106, 106);
+}
+.form {
+  padding: 0;
+  text-align: left;
+}
+.form input {
+  background: lightgray;
+  padding: 3px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: rgb(122, 131, 122);
+  color: white;
+}
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
 
 /* Portrait and Landscape */
@@ -14,60 +45,45 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    font-size: 1.3em;
+  }
+  .header {
+    margin-bottom: 30px;
   }
   .landing-page-container {
     font-size: 1.3em;
   }
 
-  .header {
-    font-family: "Cinzel", sans;
-    text-align: center;
-    font-style: black;
-    margin-bottom: 30px;
-  }
   .subheader {
-    text-align: center;
     margin-bottom: 30px;
-    font-family: "Cinzel", sans;
-    font-weight: bold;
   }
 
   #dead-ramones {
     margin-bottom: 30px;
   }
   .description {
-    font-family: "Lato", sans-serif;
-    line-height: 1.5em;
-    color: rgb(107, 106, 106);
     margin-bottom: 50px;
   }
 
   .form {
-    padding: 0;
-    text-align: left;
     margin-bottom: 50px;
   }
 
   .form input {
-    background: lightgray;
-    padding: 3px;
-    margin-right: 10px;
-    border-radius: 3px;
     font-size: 1em;
     width: 100%;
   }
 
   button {
     margin-top: 20px;
-    padding: 5px 10px;
     align-self: center;
-    border-radius: 5px;
-    background: rgb(122, 131, 122);
-    color: white;
-    border: none;
     font-size: 1em;
   }
+}
+/* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  /* .header {
+    font-size: 1.2em;
+  } */
 }
 /* Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -89,7 +105,7 @@
   .banner {
     display: flex;
     justify-content: center;
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 
   .image {
@@ -100,43 +116,19 @@
     font-size: 1.3em;
   }
 
-  .header {
-    font-family: "Cinzel", sans;
-    text-align: center;
-    font-style: black;
-  }
   .subheader {
-    text-align: left;
-    font-family: "Cinzel", sans;
-    font-weight: bolder;
     margin-bottom: 30px;
   }
 
   .description {
-    font-family: "Lato", sans-serif;
-    line-height: 1.5em;
-    color: rgb(107, 106, 106);
     margin-bottom: 50px;
   }
 
   .form {
-    padding: 0;
-    text-align: left;
     margin-bottom: 50px;
   }
   .form input {
-    background: lightgray;
-    padding: 3px;
     margin-right: 10px;
-    border-radius: 3px;
-  }
-
-  button {
-    padding: 5px 10px;
-    border-radius: 5px;
-    background: rgb(122, 131, 122);
-    color: white;
-    border: none;
   }
 }
 
@@ -156,10 +148,8 @@
   }
   .subheader {
     text-align: left;
-    font-size: 0.9em;
   }
-  .landing-page-container {
-  }
+
   #dead-ramones {
     margin-bottom: 30px;
   }
@@ -168,6 +158,7 @@
   }
   button {
     font-size: 1em;
+    margin-left: 10px;
   }
 }
 
@@ -180,42 +171,12 @@
     justify-content: center;
   }
 
-  .header {
-    font-family: "Cinzel", sans;
-    text-align: center;
-    font-style: black;
-  }
-  .subheader {
-    font-family: "Cinzel", sans;
-    font-weight: bolder;
-  }
-
   .description {
-    font-family: "Lato", sans-serif;
-    line-height: 1.5em;
-    color: rgb(107, 106, 106);
     margin-bottom: 50px;
   }
-  .landing-page-container {
-  }
 
-  .form {
-    padding: 0;
-    text-align: left;
-  }
   .form input {
-    background: lightgray;
-    padding: 3px;
     margin-right: 10px;
-    border-radius: 3px;
-  }
-
-  button {
-    padding: 5px 10px;
-    border-radius: 5px;
-    background: rgb(122, 131, 122);
-    color: white;
-    border: none;
   }
 }
 /* Portrait */
@@ -249,6 +210,7 @@
   }
   button {
     font-size: 1em;
+    margin-left: 10px;
   }
 }
 
@@ -259,14 +221,8 @@
   .banner {
     font-size: 1.3em;
   }
-  .header {
-    font-family: "Cinzel", sans;
-    text-align: center;
-    font-style: black;
-  }
+
   .subheader {
-    font-family: "Cinzel", sans;
-    font-weight: bolder;
     margin: 20px 0;
   }
   .image {
@@ -274,29 +230,11 @@
   }
 
   .description {
-    font-family: "Lato", sans-serif;
-    line-height: 1.5em;
-    color: rgb(107, 106, 106);
     margin-bottom: 50px;
   }
 
-  .form {
-    padding: 0;
-    text-align: left;
-  }
   .form input {
-    background: lightgray;
-    padding: 3px;
     margin-right: 10px;
-    border-radius: 3px;
-  }
-
-  button {
-    padding: 5px 10px;
-    border-radius: 5px;
-    background: rgb(122, 131, 122);
-    color: white;
-    border: none;
   }
 }
 /* Portrait */
@@ -328,6 +266,7 @@
   }
   button {
     font-size: 1em;
+    margin-left: 10px;
   }
 }
 
@@ -343,12 +282,53 @@
 
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
 
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .banner {
+    font-family: "Cinzel", sans;
+    font-size: 1.2em;
+  }
+  .subheader {
+    text-align: left;
+    font-weight: bolder;
+    margin: 30px 0;
+  }
+  #dead-ramones {
+    border: rgb(65, 62, 62) 20px solid;
+  }
+
+  .description {
+    font-size: 1.2em;
+    margin-bottom: 50px;
+  }
+  .image {
+    margin-bottom: 40px;
+  }
+  .form input {
+    font-size: 1.3em;
+  }
+  button {
+    font-size: 1em;
+  }
+}
 /* Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .banner {
+    font-size: 1.3em;
+  }
+  .subheader {
+    text-align: center;
+  }
 }
 
 /* Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .banner {
+    font-size: 1.3em;
+  }
+  .subheader {
+    text-align: center;
+  }
 }
 
 /* ----------- iPad Pro 10.5" ----------- */
@@ -366,11 +346,77 @@
 }
 /* ----------- Non-Retina Screens ----------- */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .header {
+    margin-bottom: 40px;
+    font-size: 2em;
+  }
+  .subheader {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+  }
+  .description {
+    font-size: 2em;
+    margin-bottom: 50px;
+    padding: 40px 0;
+  }
+  .image {
+    margin-bottom: 40px;
+  }
+  #dead-ramones {
+    border: rgb(65, 62, 62) 20px solid;
+  }
+  .form input {
+    font-size: 2em;
+  }
+  button {
+    font-size: 2em;
+    margin-left: 10px;
+  }
 }
 
 /* ----------- Retina Screens ----------- */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .header {
+    margin-bottom: 40px;
+    font-size: 2em;
+  }
+  .subheader {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+  }
+  .description {
+    font-size: 2em;
+    margin-bottom: 50px;
+    padding: 40px 0;
+  }
+  .image {
+    margin-bottom: 40px;
+  }
+  #dead-ramones {
+    border: rgb(65, 62, 62) 20px solid;
+  }
+  .form input {
+    font-size: 2em;
+  }
+  button {
+    font-size: 2em;
+    margin-left: 10px;
+  }
 }
 /* ----------- Large Screens ----------- */
 @media screen and (min-device-width: 1600px) {
+  .page-container {
+    padding: 5% 20%;
+  }
+  .subheader {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .description {
+    font-size: 12px;
+    margin: 30px 0;
+  }
 }
