@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Results from "./Results/Results";
 import config from "./config";
 import NotFound from "./NotFound/NotFound";
+import Spinner from "./Spinner/Spinner";
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +13,10 @@ class App extends Component {
     this.state = {
       people: [],
       enteredPerson: "",
-      filteredResult: {}
+      filteredResult: {},
+      description: "",
+      unknownPerson: "",
+      loading: true
     };
   }
   handleSubmit = e => {
@@ -27,7 +31,8 @@ class App extends Component {
       const data = await fetch(`${config.BASE_URL}/people/`);
       const people = await data.json();
       this.setState({
-        people
+        people,
+        loading: false
       });
     } catch (e) {
       console.log(e);
@@ -40,14 +45,30 @@ class App extends Component {
       headers: {
         "content-type": "application/json"
       },
-      body: JSON.stringify({ person_name })
+      body: JSON.stringify({
+        person_name
+      })
     };
     const postNewPerson = await fetch(
       "https://thawing-springs-96491.herokuapp.com/api/not_in_db",
       config
     );
-
     const data = await postNewPerson.json();
+    //display info in UI
+    let searchUrl =
+      "https://en.wikipedia.org/w/api.php?action=opensearch&origin=*&search=";
+    let url = `${searchUrl}${person_name}`;
+    const jsonPromise = fetch(url).then(r => r.json());
+    jsonPromise.then(data => {
+      let length = data[1].length;
+      let index = Math.floor(Math.random(length));
+      let desc = data[2][0];
+      let title = data[1][index];
+      this.setState({
+        description: desc,
+        unknownPerson: title
+      });
+    });
     return data;
   };
   filterPeople = () => {
@@ -73,21 +94,30 @@ class App extends Component {
     });
   };
   render() {
-    const { enteredPerson, filteredResult } = this.state;
+    const { enteredPerson, filteredResult, loading, description } = this.state;
     return (
       <div className="App">
         <Router>
           <Switch>
-            <LandingPage
-              exact
-              path="/"
-              changeHandler={this.changeHandler}
-              filteredResult={filteredResult}
-              enteredPerson={enteredPerson}
-              filterPeople={this.filterPeople}
-            />
+            {loading ? (
+              <Spinner />
+            ) : (
+              <LandingPage
+                exact
+                path="/"
+                changeHandler={this.changeHandler}
+                filteredResult={filteredResult}
+                enteredPerson={enteredPerson}
+                filterPeople={this.filterPeople}
+                loading={loading}
+              />
+            )}
             <Results path="/results" filteredResult={filteredResult} />
-            <NotFound path="/not-found" />
+            <NotFound
+              path="/not-found"
+              unknownPerson={this.state.unknownPerson}
+              description={description}
+            />
           </Switch>
         </Router>
       </div>

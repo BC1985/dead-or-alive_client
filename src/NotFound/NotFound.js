@@ -5,6 +5,7 @@ import error from "./error.png";
 import "./NotFound.css";
 class NotFound extends Component {
   render() {
+    let { unknownPerson, description } = this.props;
     return (
       <div className="not-found-container">
         <h1>Uh oh...</h1>
@@ -12,9 +13,10 @@ class NotFound extends Component {
           <img src={error} alt="404 error" id="error-graphic" />
         </div>
         <p style={{ textAlign: "left" }}>
-          The person you requested is unavailable. The name has been submitted,
-          and their information will be uploaded soon. In the meantime, here is
-          an interesting music fact...
+          {unknownPerson} is unavailable. The name has been submitted, and their
+          information will be uploaded soon. Here is what I can tell you in the
+          meantime: {description} <br />
+          Here is an interesting music fact...
         </p>
         <div className="fact-card">{generateRandomFact()}</div>
         <NavLink to="/">
