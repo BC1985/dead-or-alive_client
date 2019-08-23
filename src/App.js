@@ -14,6 +14,8 @@ class App extends Component {
       people: [],
       enteredPerson: "",
       filteredResult: {},
+      description: "",
+      unknownPerson: "",
       loading: true
     };
   }
@@ -43,15 +45,32 @@ class App extends Component {
       headers: {
         "content-type": "application/json"
       },
-      body: JSON.stringify({ person_name })
+      body: JSON.stringify({
+        person_name
+      })
     };
 
     const postNewPerson = await fetch(
+      //post to API
       "http://localhost:8000/api/not_in_db",
       config
     );
-
     const data = await postNewPerson.json();
+    //display info in UI
+    let searchUrl =
+      "https://en.wikipedia.org/w/api.php?action=opensearch&origin=*&search=";
+    let url = `${searchUrl}${person_name}`;
+    const jsonPromise = fetch(url).then(r => r.json());
+    jsonPromise.then(data => {
+      let length = data[1].length;
+      let index = Math.floor(Math.random(length));
+      let desc = data[2][0];
+      let title = data[1][index];
+      this.setState({
+        description: desc,
+        unknownPerson: title
+      });
+    });
     return data;
   };
   filterPeople = () => {
@@ -77,7 +96,7 @@ class App extends Component {
     });
   };
   render() {
-    const { enteredPerson, filteredResult, loading } = this.state;
+    const { enteredPerson, filteredResult, loading, description } = this.state;
     return (
       <div className="App">
         <Router>
@@ -96,7 +115,11 @@ class App extends Component {
               />
             )}
             <Results path="/results" filteredResult={filteredResult} />
-            <NotFound path="/not-found" />
+            <NotFound
+              path="/not-found"
+              unknownPerson={this.state.unknownPerson}
+              description={description}
+            />
           </Switch>
         </Router>
       </div>
