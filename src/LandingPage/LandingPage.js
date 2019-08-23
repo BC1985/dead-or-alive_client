@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./LandingPage.css";
 import { withRouter } from "react-router-dom";
+import Spinner from "../Spinner/Spinner";
 
 class LandingPage extends Component {
   handleSubmit = e => {
@@ -16,6 +17,7 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="landing-page-container">
+        {this.props.loading && <Spinner />}
         <div className="header font-effect-decaying">
           <h1>DEAD OR ALIVE</h1>
           <div className="subheader">
