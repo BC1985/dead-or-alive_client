@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Results from "./Results/Results";
 import config from "./config";
 import NotFound from "./NotFound/NotFound";
+import Spinner from "./Spinner/Spinner";
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class App extends Component {
     this.state = {
       people: [],
       enteredPerson: "",
-      filteredResult: {}
+      filteredResult: {},
+      loading: true
     };
   }
   handleSubmit = e => {
@@ -27,7 +29,8 @@ class App extends Component {
       const data = await fetch(`${config.API_ENDPOINT}/people/`);
       const people = await data.json();
       this.setState({
-        people
+        people,
+        loading: false
       });
     } catch (e) {
       console.log(e);
@@ -74,19 +77,24 @@ class App extends Component {
     });
   };
   render() {
-    const { enteredPerson, filteredResult } = this.state;
+    const { enteredPerson, filteredResult, loading } = this.state;
     return (
       <div className="App">
         <Router>
           <Switch>
-            <LandingPage
-              exact
-              path="/"
-              changeHandler={this.changeHandler}
-              filteredResult={filteredResult}
-              enteredPerson={enteredPerson}
-              filterPeople={this.filterPeople}
-            />
+            {loading ? (
+              <Spinner />
+            ) : (
+              <LandingPage
+                exact
+                path="/"
+                changeHandler={this.changeHandler}
+                filteredResult={filteredResult}
+                enteredPerson={enteredPerson}
+                filterPeople={this.filterPeople}
+                loading={loading}
+              />
+            )}
             <Results path="/results" filteredResult={filteredResult} />
             <NotFound path="/not-found" />
           </Switch>
