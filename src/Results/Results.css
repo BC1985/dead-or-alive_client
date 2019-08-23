@@ -1,49 +1,36 @@
-.results-container {
-  padding: 20px;
-}
-
-.image-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.headstone {
-  display: flex;
-  justify-content: center;
-}
-.portrait {
-  width: 250px;
-  margin: 20px auto;
-  border: 10px double rgb(211, 150, 19);
-  border-radius: 50%;
-  box-shadow: 10px 5px 20px gray;
-}
 .name {
   text-align: center;
   font-family: "Cinzel", serif;
   font-weight: bold;
 }
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.status_alive {
+  color: rgb(73, 68, 68);
+  font-family: "Francois One", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
 .status_dead {
   color: rgb(73, 68, 68);
   font-family: "Cinzel", serif;
-
   text-align: center;
+  margin-bottom: 10px;
 }
 .dates-alive {
   color: rgb(73, 68, 68);
   font-family: "Francois One", sans-serif;
   text-align: center;
   margin-bottom: 40px;
+  font-size: 1.2em;
 }
 .dates-dead {
   color: rgb(73, 68, 68);
   font-family: "Cinzel", serif;
-  text-align: center;
-  margin-bottom: 40px;
-}
-.status_alive {
-  color: rgb(73, 68, 68);
-  font-family: "Francois One", sans-serif;
+  font-weight: bold;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -56,4 +43,191 @@
   justify-content: center;
   margin-bottom: 60px;
   cursor: pointer;
+}
+.button button {
+  width: 200px;
+  padding: 5px;
+}
+.image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.headstone {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.portrait {
+  width: 250px;
+  margin: 20px auto;
+  border: 10px double rgb(211, 150, 19);
+  border-radius: 50%;
+  box-shadow: 10px 5px 20px gray;
+}
+.results-container {
+  padding: 15%;
+}
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+}
+/* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .results-container {
+    padding: 0;
+  }
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .results-container {
+    padding: 0;
+  }
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  .button button {
+    padding: 10px;
+  }
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  .results-container {
+    padding: 5%;
+  }
+}
+
+/* ----------- Galaxy S6 ----------- */
+
+/* Portrait */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 4) and (orientation: portrait) {
+}
+
+/* Landscape */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 4) and (orientation: landscape) {
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+}
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .results-container {
+    padding: 5%;
+  }
+  .portrait {
+    width: 400px;
+  }
+  .info {
+    font-size: 1.2em;
+    padding: 20px;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  /* .portrait {
+    width: 400px;
+  } */
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+
+@media only screen and (min-device-width: 834px) and (max-device-width: 834px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+
+@media only screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+}
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+  .results-container {
+    padding: 10%;
+  }
+  .portrait {
+    float: left;
+    position: absolute;
+    top: 90px;
+    left: 70px;
+    width: 300px;
+    margin: 20px auto;
+    border: 10px double rgb(211, 150, 19);
+    border-radius: 50%;
+    box-shadow: 10px 5px 20px gray;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 250px;
+    font-size: 1em;
+  }
+}
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+}
+/* ----------- Large Screens ----------- */
+@media screen and (min-device-width: 1600px) {
+  .results-container {
+    padding: 0;
+  }
+  .portrait {
+    /* disable float and position for mobile */
+    float: left;
+    position: absolute;
+    top: 30px;
+    left: 70px;
+    width: 250px;
+    margin: 20px auto;
+    border: 10px double rgb(211, 150, 19);
+    border-radius: 50%;
+    box-shadow: 10px 5px 20px gray;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 250px;
+  }
+  .button button {
+    display: none;
+  }
 }
