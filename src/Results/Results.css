@@ -222,12 +222,11 @@
     padding: 0;
   }
   .portrait {
-    /* disable float and position for mobile */
     float: left;
     position: absolute;
-    top: 30px;
+    top: 50px;
     left: 70px;
-    width: 250px;
+    width: 100%;
     margin: 20px auto;
     border: 10px double rgb(211, 150, 19);
     border-radius: 50%;
