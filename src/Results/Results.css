@@ -228,15 +228,11 @@
     top: 50px;
     left: 70px;
     width: 450px;
-    margin: 20px auto;
-    /* border: 10px double rgb(211, 150, 19); */
-    /* border-radius: 50%; */
-    box-shadow: 10px 5px 20px gray;
   }
   .info {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 250px;
     margin-left: 250px;
   }
   .button button {
