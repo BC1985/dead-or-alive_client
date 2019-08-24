@@ -12,15 +12,17 @@ class NotFound extends Component {
         <div className="error-graphic">
           <img src={error} alt="404 error" id="error-graphic" />
         </div>
-        <p style={{ textAlign: "left" }}>
-          {unknownPerson} is unavailable. The name has been submitted, and their
-          information will be uploaded soon. Here is what I can tell you in the
-          meantime: {description} <br />
-          And now, here is an interesting music fact...
-        </p>
+        <div className="content">
+          <p style={{ textAlign: "left" }}>
+            {unknownPerson} is unavailable. The name has been submitted, and
+            their information will be uploaded soon. Here is what I can tell you
+            in the meantime: {description} <br />
+            And now, here is an interesting music fact...
+          </p>
+        </div>
         <div className="fact-card">{generateRandomFact()}</div>
         <NavLink to="/">
-          <button>Back</button>
+          <button className="error-back-button">Back</button>
         </NavLink>
       </div>
     );
