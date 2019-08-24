@@ -4,10 +4,10 @@
 .not-found-container {
   text-align: center;
   font-family: "Francois One", sans-serif;
-  color: gray;
+  color: #595959;
 }
 .fact-card {
-  background-color: orangered;
+  background-color: #9e2a00;
   padding: 20px;
   color: white;
   border-radius: 10px;
@@ -52,7 +52,6 @@
   }
   #error-graphic {
     width: 50%;
-    /* padding: 30px; */
   }
 }
 
@@ -63,7 +62,7 @@
   .not-found-container {
     text-align: center;
     font-family: "Francois One", sans-serif;
-    color: gray;
+    color: #595959;
   }
 }
 /* Portrait */
@@ -106,7 +105,7 @@
   .not-found-container {
     text-align: center;
     font-family: "Francois One", sans-serif;
-    color: gray;
+    color: #595959;
   }
 
   .error-back-button {
@@ -132,9 +131,6 @@
     width: 40%;
     padding: 40px;
   }
-  /* .content {
-    margin-bottom: 30px;
-  } */
 }
 
 /* ----------- iPhone X ----------- */
