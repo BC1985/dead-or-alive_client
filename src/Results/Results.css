@@ -220,16 +220,17 @@
 @media screen and (min-device-width: 1600px) {
   .results-container {
     padding: 0;
+    font-size: 1.2em;
   }
   .portrait {
     float: left;
     position: absolute;
     top: 50px;
     left: 70px;
-    width: 50%;
+    width: 450px;
     margin: 20px auto;
-    border: 10px double rgb(211, 150, 19);
-    border-radius: 50%;
+    /* border: 10px double rgb(211, 150, 19); */
+    /* border-radius: 50%; */
     box-shadow: 10px 5px 20px gray;
   }
   .info {
