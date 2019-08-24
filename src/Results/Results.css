@@ -232,7 +232,7 @@
   .info {
     display: flex;
     flex-direction: column;
-    margin-top: 250px;
+    margin-top: 150px;
     margin-left: 250px;
   }
   .button button {
