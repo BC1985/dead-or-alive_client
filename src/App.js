@@ -76,15 +76,15 @@ class App extends Component {
     return data;
   };
   filterPeople = () => {
-    const filteredResult = this.state.people.filter(person => {
+    const { people, enteredPerson } = this.state;
+    const filteredResult = people.filter(person => {
       return (
-        person.person_name.toLowerCase() ===
-        this.state.enteredPerson.toLowerCase()
+        person.person_name.toLowerCase() === enteredPerson.toLowerCase().trim()
       );
     });
     if (filteredResult.length === 0) {
       this.setState({
-        person_name: this.state.enteredPerson
+        person_name: enteredPerson
       });
       this.uploadNewPerson();
       return false;
