@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import headstone from "./headstone.png";
 import "./Results.css";
 const Results = props => {
@@ -10,6 +10,9 @@ const Results = props => {
     description,
     dates
   } = props.filteredResult;
+  if (image === undefined) {
+    return <Redirect to="/" />;
+  }
   return (
     <div>
       <div className="results-container">
