@@ -102,6 +102,9 @@
 
 /* Portrait */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  .button button {
+    padding: 10px;
+  }
 }
 
 /* Landscape */
@@ -115,12 +118,18 @@
 
 /* Portrait */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  .button button {
+    padding: 10px;
+  }
 }
 
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
   .results-container {
     padding: 5%;
+  }
+  .button button {
+    padding: 10px;
   }
 }
 
@@ -151,13 +160,16 @@
     font-size: 1.2em;
     padding: 20px;
   }
+  .button button {
+    padding: 10px;
+  }
 }
 
 /* Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-  /* .portrait {
-    width: 400px;
-  } */
+  .button button {
+    padding: 10px;
+  }
 }
 
 /* ----------- iPad Pro 10.5" ----------- */
