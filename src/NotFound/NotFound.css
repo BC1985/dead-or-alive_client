@@ -236,7 +236,7 @@
 @media screen and (min-device-width: 1600px) {
   .not-found-container {
     padding: 5% 20%;
-    font-size: 12px;
+    font-size: 1.2em;
   }
   #error-graphic {
     width: 40%;
