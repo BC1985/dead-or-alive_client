@@ -40,7 +40,9 @@ const Results = props => {
           </div>
           <div className="button">
             <NavLink to="/">
-              <button>Back</button>
+              <button aria-label="back" role="presentation">
+                Back
+              </button>
             </NavLink>
           </div>
         </div>
