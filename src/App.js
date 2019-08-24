@@ -70,7 +70,8 @@ class App extends Component {
       this.setState({
         description: desc,
         unknownPerson: title,
-        loading: false
+        loading: false,
+        enteredPerson: ""
       });
     });
     return data;
