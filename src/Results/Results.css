@@ -234,6 +234,7 @@
     flex-direction: column;
     margin-top: 150px;
     margin-left: 250px;
+    font-size: 1.3em;
   }
   .button button {
     display: none;
