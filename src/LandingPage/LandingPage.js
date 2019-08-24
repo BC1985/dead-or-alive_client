@@ -4,13 +4,23 @@ import { withRouter } from "react-router-dom";
 import ramones from "./ramones.png";
 
 class LandingPage extends Component {
+  state = {
+    hasError: false
+  };
+
   handleSubmit = e => {
     e.preventDefault();
-    const ifExists = this.props.filterPeople();
-    if (ifExists) {
-      this.props.history.push(`/results/${this.props.enteredPerson}`);
+    if (this.props.enteredPerson.length === 0) {
+      this.setState({
+        hasError: true
+      });
     } else {
-      this.props.history.push("/not-found");
+      const ifExists = this.props.filterPeople();
+      if (ifExists) {
+        this.props.history.push(`/results/${this.props.enteredPerson}`);
+      } else {
+        this.props.history.push("/not-found");
+      }
     }
   };
 
@@ -42,6 +52,9 @@ class LandingPage extends Component {
             see if they are alive or dead.
           </p>
           <form className="form">
+            <p className="no-input">
+              {this.state.hasError && "Please enter name"}
+            </p>
             <input
               type="text"
               name="person_name"
