@@ -24,7 +24,8 @@ Clone this repo to your desktop and run `npm install` to install all the depende
 
 ### Features 
 * Enter musician name and see if they are still alive or not still alive (:
-* Different UI and descriptions based on mortality status
+* Different UI and descriptions based on corporeal status
+* Biographical dates 
 * Posts to designated endpoint if person not found in main musicians pool
 * Displays information from wikipedia API if person not found in db
 * Responsive layout
