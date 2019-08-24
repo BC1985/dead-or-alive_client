@@ -21,6 +21,11 @@
   line-height: 1.5em;
   color: rgb(107, 106, 106);
 }
+.no-input {
+  font-style: italic;
+  font-family: "Lato", sans-serif;
+  color: rgb(107, 106, 106);
+}
 .form {
   padding: 0;
   text-align: left;
