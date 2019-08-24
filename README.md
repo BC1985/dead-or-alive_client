@@ -30,7 +30,10 @@ Clone this repo to your desktop and run `npm install` to install all the depende
 * Displays information from wikipedia API if person not found in db
 * Responsive layout
 
-#### Screenshots
+### Upcoming features
+* Client interface for users to enter data into main pool of musicians.
+
+### Screenshots
 
 <img src="src/Images/doa_screenshot1.png" width="400">
 <img src="src/Images/doa_screenshot2.png" width="350">
