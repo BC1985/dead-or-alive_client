@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="not-found-container"
+>
+  <h1>
+    Uh oh...
+  </h1>
+  <div
+    className="error-graphic"
+  >
+    <img
+      alt="404 error"
+      id="error-graphic"
+      src="error.png"
+    />
+  </div>
+  <div
+    className="content"
+  >
+    <p
+      style={
+        Object {
+          "textAlign": "left",
+        }
+      }
+    >
+       is unavailable. The name has been submitted, and their information will be uploaded soon. Here is what I can tell you in the meantime: 
+       
+      <br />
+      And now, here is an interesting music fact...
+    </p>
+  </div>
+  <div
+    className="fact-card"
+  >
+    Serial killer Aileen Wuornos was obsessed with Natalie Merchant's "Carnival." She requested they play it at her funeral.
+  </div>
+  <a
+    aria-current="page"
+    className="active"
+    href="/"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    <button
+      className="error-back-button"
+    >
+      Back
+    </button>
+  </a>
+</div>
+`;
