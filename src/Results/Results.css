@@ -54,13 +54,14 @@
   justify-content: center;
 }
 .headstone {
+  width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
 
 .portrait {
-  width: 250px;
+  width: 80%;
   margin: 20px auto;
   border: 10px double rgb(211, 150, 19);
   border-radius: 50%;
