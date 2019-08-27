@@ -54,14 +54,13 @@
   justify-content: center;
 }
 .headstone {
-  width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
 
 .portrait {
-  width: 80%;
+  width: 250px;
   margin: 20px auto;
   border: 10px double rgb(211, 150, 19);
   border-radius: 50%;
@@ -236,8 +235,5 @@
     margin-top: 150px;
     margin-left: 250px;
     font-size: 1.3em;
-  }
-  .button button {
-    display: none;
   }
 }
