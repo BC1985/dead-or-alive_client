@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import { generateRandomFact } from "../Utils/randomFact";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import error from "./error.png";
 import "./NotFound.css";
 class NotFound extends Component {
   render() {
     let { unknownPerson, description } = this.props;
+    if (description.length === 0) {
+      return <Redirect to="/" />;
+    }
     return (
       <div className="not-found-container">
         <h1>Uh oh...</h1>
