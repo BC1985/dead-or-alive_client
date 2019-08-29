@@ -60,7 +60,7 @@
 }
 
 .portrait {
-  width: 250px;
+  width: 100%;
   margin: 20px auto;
   border: 10px double rgb(211, 150, 19);
   border-radius: 50%;
