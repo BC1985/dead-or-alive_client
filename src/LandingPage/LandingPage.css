@@ -41,6 +41,7 @@ button {
   border-radius: 4px;
   background: #4e554e;
   color: white;
+  cursor: pointer;
 }
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
 
