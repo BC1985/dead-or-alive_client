@@ -55,7 +55,7 @@ class LandingPage extends Component {
               below to see if they are alive or dead.
             </p>
             <form className="form">
-              <p className="no-input">
+              <p className="error-message">
                 {this.state.hasError && "Please enter name"}
               </p>
               <input
