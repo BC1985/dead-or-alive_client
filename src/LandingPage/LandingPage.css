@@ -21,10 +21,10 @@
   line-height: 1.5em;
   color: rgb(107, 106, 106);
 }
-.no-input {
+.error-message {
   font-style: italic;
   font-family: "Lato", sans-serif;
-  color: rgb(107, 106, 106);
+  color: firebrick;
 }
 .form {
   padding: 0;
