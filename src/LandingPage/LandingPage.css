@@ -22,6 +22,7 @@
   color: rgb(107, 106, 106);
 }
 .error-message {
+  margin-bottom: 10px;
   font-style: italic;
   font-family: "Lato", sans-serif;
   color: firebrick;
@@ -41,6 +42,13 @@ button {
   border-radius: 4px;
   background: #4e554e;
   color: white;
+  cursor: pointer;
+}
+button:disabled {
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: #9e9e9e;
+  color: black;
   cursor: pointer;
 }
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
