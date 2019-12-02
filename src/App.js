@@ -16,13 +16,11 @@ class App extends Component {
       filteredResult: {},
       description: "",
       unknownPerson: "",
-      loading: true
+      loading: true,
+      hasError: false
     };
   }
-  handleSubmit = e => {
-    e.preventDefault();
-    this.filterPeople();
-  };
+
   componentDidMount() {
     this.fetchPeople();
   }
@@ -98,6 +96,24 @@ class App extends Component {
       enteredPerson: e.target.value
     });
   };
+
+  validateInput = () => {
+    const { enteredPerson } = this.state;
+    const validCharacters = /^[a-zA-Z ]*$/;
+
+    if (enteredPerson.length <= 2) {
+      return "Please enter name";
+    }
+    if (enteredPerson.length > 72) {
+      return "Name can't be more than 72 characters";
+    }
+
+    if (!validCharacters.test(enteredPerson)) {
+      return "Please enter only alphabetical characters, no numbers or symbols";
+    }
+    return null;
+  };
+
   render() {
     const { enteredPerson, filteredResult, loading, description } = this.state;
     return (
@@ -115,6 +131,8 @@ class App extends Component {
                 enteredPerson={enteredPerson}
                 filterPeople={this.filterPeople}
                 loading={loading}
+                validateInput={this.validateInput}
+                hasError={this.state.hasError}
               />
             )}
             <Results path="/results" filteredResult={filteredResult} />

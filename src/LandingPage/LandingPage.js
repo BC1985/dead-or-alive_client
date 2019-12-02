@@ -5,26 +5,22 @@ import ramones from "./ramones.png";
 
 class LandingPage extends Component {
   state = {
-    hasError: false
+    isButtonEnabled: false
   };
-
   handleSubmit = e => {
     e.preventDefault();
-    if (this.props.enteredPerson.length === 0) {
-      this.setState({
-        hasError: true
-      });
+    const ifExists = this.props.filterPeople();
+    if (ifExists) {
+      this.props.history.push(`/results/${this.props.enteredPerson}`);
     } else {
-      const ifExists = this.props.filterPeople();
-      if (ifExists) {
-        this.props.history.push(`/results/${this.props.enteredPerson}`);
-      } else {
-        this.props.history.push("/not-found");
-      }
+      this.props.history.push("/not-found");
     }
   };
 
   render() {
+    // to conditionally determine if button is disabled
+    const errorMessage = this.props.validateInput();
+    const isThereError = errorMessage ? true : false;
     return (
       <div className="page-container">
         <header role="banner">
@@ -54,11 +50,10 @@ class LandingPage extends Component {
               the great gig in the sky. Simply enter the name of a musician
               below to see if they are alive or dead.
             </p>
+            <p className="error-message">{errorMessage}</p>
             <form className="form">
-              <p className="error-message">
-                {this.state.hasError && "Please enter name"}
-              </p>
               <input
+                required
                 aria-label="name"
                 type="text"
                 name="person_name"
@@ -67,9 +62,10 @@ class LandingPage extends Component {
                 onChange={this.props.changeHandler}
               />
               <button
-                type="submit"
+                type={this.props.hasError ? "disabled" : "submit"}
                 aria-label="submit"
                 onClick={this.handleSubmit}
+                disabled={isThereError}
               >
                 Search
               </button>
