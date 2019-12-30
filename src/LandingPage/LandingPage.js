@@ -18,8 +18,14 @@ class LandingPage extends Component {
   };
 
   render() {
+    const {
+      validateInput,
+      enteredPerson,
+      changeHandler,
+      hasError
+    } = this.props;
     // to conditionally determine if button is disabled
-    const errorMessage = this.props.validateInput();
+    const errorMessage = validateInput();
     const isThereError = errorMessage ? true : false;
     return (
       <div className="page-container">
@@ -58,11 +64,11 @@ class LandingPage extends Component {
                 type="text"
                 name="person_name"
                 id="name"
-                value={this.props.enteredPerson}
-                onChange={this.props.changeHandler}
+                value={enteredPerson}
+                onChange={changeHandler}
               />
               <button
-                type={this.props.hasError ? "disabled" : "submit"}
+                type={hasError ? "disabled" : "submit"}
                 aria-label="submit"
                 onClick={this.handleSubmit}
                 disabled={isThereError}
